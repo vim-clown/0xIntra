@@ -11,6 +11,7 @@ while Intra.active:
             result_type="recent",
             count=count,
             tweet_mode="extended",
+            include_entities=True
         )
 
     def retweet_tweet(tweet):
@@ -48,7 +49,7 @@ while Intra.active:
                 success += 1
         print(f"retweeted {success} tweet(s)")
         if success == 0:
-            time.sleep(10)
+            time.sleep(60)
         else:
             time.sleep(600)
 
