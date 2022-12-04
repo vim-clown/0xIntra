@@ -52,9 +52,9 @@ while Intra.active:
                 success += 1
         print(f"retweeted {success} tweet(s)")
         if success == 0:
-            time.sleep(60)
-        else:
             time.sleep(600)
+        else:
+            time.sleep(1200)
 
     read_file = Intra.codecs.open("Intra/list.txt", "r+", "utf-8")
     content = read_file.readlines()
