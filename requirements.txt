@@ -1,0 +1,5 @@
+tweepy~=4.5.0
+twitter~=1.19.3
+TWT==0.0.2
+requests~=2.27.1
+python-twitter-v2
