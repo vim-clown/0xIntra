@@ -15,13 +15,16 @@ while Intra.active:
 
     def retweet_tweet(tweet):
         try:
+            tag_list = []
+            for tag in tweet.entities["hashtags"]:
+               tag_list.append(tag) 
             if [
                 medium["type"] == "photo" or "video"
                 for medium in tweet.entities["media"]
             ] and [
                 medium["text"] != "giveaway" for medium
                 in tweet.entities["hashtags"]
-            ] and hasattr(tweet, "user_mentions") == False:
+            ] and hasattr(tweet, "user_mentions") == False and len(tag_list) <= 3: # to avoid tweets with spammy tags
                 result = Intra.intra_api.retweet(tweet.id)
                 tweet_text = result.text
                 print(f"Retweeted: {tweet_text}")
