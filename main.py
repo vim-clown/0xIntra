@@ -45,7 +45,7 @@ while Intra.active:
                 success += 1
         print(f"retweeted {success} tweet(s)")
         if success == 0:
-            time.sleep(1)
+            time.sleep(10)
         else:
             time.sleep(600)
 
