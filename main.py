@@ -39,6 +39,9 @@ while Intra.active:
         except KeyError as keyerror:
             print("Error:", keyerror)
             return None
+        except Intra.tweepy.errors.HTTPException as f:
+            print("Error:", f)
+            return None
 
     def auto_retweet(q, count):
         result = search_tweets(q, count)
